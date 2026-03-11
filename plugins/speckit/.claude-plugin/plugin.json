@@ -1,0 +1,19 @@
+{
+    "name": "speckit",
+    "version": "0.1.0",
+    "description": "Spec-Driven Development (SDD) workflow for Claude Code - Generate specifications, plans, tasks, and implement features systematically",
+    "author": {
+        "name": "Vimox Shah"
+    },
+    "repository": "https://github.com/vimox-shah-genea/spec-kit",
+    "license": "MIT",
+    "keywords": [
+        "specification",
+        "planning",
+        "development-workflow",
+        "sdd",
+        "spec-driven-development",
+        "project-management",
+        "task-management"
+    ]
+}
