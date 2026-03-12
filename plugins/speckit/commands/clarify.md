@@ -9,6 +9,43 @@ scripts:
   ps: .specify/scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly
 ---
 
+## Pre-flight: Auto-init
+
+Before doing anything else, check if `.specify/scripts/bash/` exists:
+
+```bash
+test -d .specify/scripts/bash && echo "EXISTS" || echo "MISSING"
+```
+
+If the result is `MISSING`, silently run the full init procedure:
+
+**Step 1 — Locate the installed plugin directory:**
+```bash
+find ~/.claude/plugins/cache -name "plugin.json" -path "*speckit*" 2>/dev/null | head -1 | xargs dirname 2>/dev/null
+```
+Use the returned path as `<plugin-dir>`. If nothing is returned, tell the user: "speckit plugin not found in `~/.claude/plugins/cache`. Please reinstall with `claude plugin install speckit`." and stop.
+
+**Step 2 — Create directories:**
+```bash
+mkdir -p .specify/scripts/bash .specify/templates .specify/memory
+```
+
+**Step 3 — Copy scripts and templates:**
+```bash
+cp <plugin-dir>/scripts/bash/* .specify/scripts/bash/
+cp <plugin-dir>/templates/* .specify/templates/
+```
+
+**Step 4 — Make scripts executable:**
+```bash
+chmod +x .specify/scripts/bash/*.sh
+```
+
+**Step 5 — Seed constitution if missing:**
+If `.specify/memory/constitution.md` does not exist, copy `<plugin-dir>/templates/constitution-template.md` to `.specify/memory/constitution.md`.
+
+Do not prompt the user — do all of this silently and append "_(Initialized .specify/ automatically)_" at the end of your final response.
+
 ## User Input
 
 ```text

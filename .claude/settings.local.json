@@ -1,7 +1,26 @@
 {
   "permissions": {
     "allow": [
-      "Bash(claude plugin:*)"
+      "Bash(claude plugin:*)",
+      "Bash(cp -r /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/.specify/scripts /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/scripts)",
+      "Bash(cp -r /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/.specify/templates /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/templates)",
+      "Bash(cp -r /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/.specify/memory /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/memory)",
+      "Bash(grep -l \"\\\\.specify/scripts\" /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/commands/*.md)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/commands/**)",
+      "Bash(done)",
+      "Read(//Users/vimoxshah/.claude/**)",
+      "Read(//Users/vimoxshah/.config/**)",
+      "Read(//Users/vimoxshah/Library/**)",
+      "Read(//Users/vimoxshah/.local/**)",
+      "Bash(grep -l \"Pre-flight: Auto-init\" /Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/commands/*.md)",
+      "Bash(OLD='## Pre-flight: Auto-init:*)",
+      "Bash(__NEW_LINE_9b3e709f8e249dc6__ NEW='## Pre-flight: Auto-init:*)",
+      "Bash(__NEW_LINE_9b3e709f8e249dc6__ for:*)",
+      "Bash(FILE=\"/Users/vimoxshah/Desktop/Vimox/poc/spec-kit/plugins/speckit/commands/$f.md\")",
+      "Bash(python3 -c \":*)"
     ]
   }
 }
